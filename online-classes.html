@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0A2558">
+    <meta name="description" content="Join Get Robotics live online robotics, coding and hardware engineering classes from anywhere in Nigeria and beyond.">
+    <title>Online Robotics &amp; Coding Academy | Get Robotics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="online-classes-page">
+    <a class="skip-link" href="#main-content">Skip to online classes</a>
+    <header id="main-header" class="rev-header">
+      <div class="rev-top-header">
+        <button id="mobile-menu-btn" class="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-controls="mobile-nav-drawer" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <a href="index.html" class="rev-brand-logo" aria-label="Get Robotics home"><img src="images/logo-transparent.png" alt="Get Robotics"></a>
+        <form id="global-search-form" class="rev-search-container" role="search" action="shop.html">
+          <label class="visually-hidden" for="global-search-input">Search robotics products</label>
+          <input id="global-search-input" type="search" placeholder="Search Robotics Kits, Arduino, ESP32, Courses or SKU..." autocomplete="off">
+          <button id="global-search-btn" type="submit" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </button>
+        </form>
+        <div class="rev-header-actions">
+          <div class="header-help-menu">
+            <button class="header-action header-action-button help-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true" data-help-toggle>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.7 9a2.4 2.4 0 1 1 4.1 1.7c-1.1 1.1-1.8 1.3-1.8 3m0 3h.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span>Help ▾</span>
+            </button>
+            <div class="help-dropdown">
+              <a href="help.html">Help Center &amp; FAQs</a>
+              <a href="help.html#faq-classes">How to Book a Class</a>
+              <a href="help.html#faq-orders">Place &amp; Track a Kit Order</a>
+              <a href="help.html#faq-payment">Payment &amp; Delivery Options</a>
+              <a href="help.html#faq-schools">School Lab Partnerships</a>
+              <a href="help.html#faq-codehub">Student Code Hub Guide</a>
+              <div class="help-dropdown-actions">
+                <button class="help-chat-action" type="button" data-open-support><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-5 4v-4.3A2.5 2.5 0 0 1 4 13.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Live Chat (AI Support)</button>
+                <a class="help-whatsapp-action" href="https://wa.me/2347033952315?text=Hello%20Get%20Robotics%2C%20I%20need%20help." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.8a8.4 8.4 0 0 1-12.4 7.4l-4.6 1.2 1.2-4.5a8.4 8.4 0 1 1 15.8-4.1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>WhatsApp Us</a>
+              </div>
+            </div>
+          </div>
+          <a class="header-action" href="https://get-robotics.gzoquery.com.ng" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4m8-8 4 4-4 4m-3-10-2 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Code Hub</span>
+          </a>
+          <a class="header-action" id="header-account-link" href="login.html">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span id="header-account-label">Account</span>
+          </a>
+          <a class="header-action header-action-button" href="cart.html#cart-wishlist-section" aria-label="View wish list">
+            <span class="header-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 8.8c0 4.3-8.5 10-8.5 10s-8.5-5.7-8.5-10a4.5 4.5 0 0 1 8.5-2.1 4.5 4.5 0 0 1 8.5 2.1Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span id="wishlist-count-badge" class="count-badge">0</span></span>
+            <span>Wish List</span>
+          </a>
+          <a class="header-action header-action-button" id="header-cart-btn" href="cart.html" aria-label="Open cart">
+            <span class="header-action-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span id="cart-count-badge" class="count-badge">0</span></span>
+            <span>Cart</span>
+          </a>
+        </div>
+        <div class="mobile-header-actions">
+          <a class="mobile-icon-link" href="tel:+2349030221179" aria-label="Call Get Robotics">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9.5 3l2 4.7-2 1.6a15 15 0 0 0 5.2 5.2l1.6-2 4.7 2-.5 2.9a3 3 0 0 1-3.2 2.5A15.8 15.8 0 0 1 4.1 6.7a3 3 0 0 1 2.5-3.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="mobile-icon-link" id="mobile-cart-btn" href="cart.html" aria-label="Open cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span id="mobile-cart-count-badge" class="count-badge">0</span>
+          </a>
+        </div>
+      </div>
+      <nav class="rev-nav-bar" aria-label="Main navigation">
+        <ul class="rev-nav-list">
+          <li class="rev-nav-item"><button type="button">GET ACADEMY <svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="rev-dropdown"><a href="index.html#updates-flyers-section">Saturday In-Person Robotics Classes</a><a href="online-classes.html">Online Live Robotics &amp; Coding Classes (NEW)</a><a href="index.html#updates-flyers-section">Holiday STEM Bootcamps</a><a href="index.html#school-partnership-section">School Robotics Lab Partnerships</a><a href="index.html#about-instructor-section">Meet the Lead Instructor</a></div></li>
+          <li class="rev-nav-item"><a class="shop-all-nav-link" href="online-classes.html" aria-current="page">Online Classes</a></li>
+          <li class="rev-nav-item"><button type="button">ROBOTICS KITS <svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="rev-dropdown"><a href="shop.html">Arduino Uno Starter Kits</a><a href="shop.html">ESP32 &amp; Wi-Fi Smart Cars</a><a href="shop.html">Acebott Bionic Spider Kits</a><a href="shop.html">Sensors, Motors &amp; Breadboards</a></div></li>
+          <li class="rev-nav-item"><button type="button">Competition <svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="rev-dropdown"><a href="#booking-section">FIRST Global &amp; FTC Prep</a><a href="#booking-section">VEXcode VR Challenges</a><a href="#booking-section">Nigerian Youth STEM Competitions</a></div></li>
+          <li class="rev-nav-item"><button type="button">Education <svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="rev-dropdown"><a href="#booking-section">Primary &amp; Secondary Curriculum</a><a href="#booking-section">School Robotics Lab Setup</a><a href="#projects-showcase-section">6 DIY Student Projects</a></div></li>
+          <li class="rev-nav-item"><a class="shop-all-nav-link" href="shop.html">Robotics Store <svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><div class="rev-dropdown"><a href="shop.html">All Robotics Hardware</a><a href="shop.html">Student Starter Bundles</a><a href="shop.html">Discounted School Packs</a></div></li>
+          <li class="rev-nav-item"><button type="button">Tech Resources <svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="rev-dropdown"><a href="https://get-robotics.gzoquery.com.ng" target="_blank" rel="noopener noreferrer">Student Code Hub (Arduino &amp; ESP32) <svg class="external-link-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M9 2h5v5M14 2 7 9M12 9v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://get-robotics.gzoquery.com.ng" target="_blank" rel="noopener noreferrer">Master Code Docs Download <svg class="external-link-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M9 2h5v5M14 2 7 9M12 9v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#live-videos-section">Classroom Video Tutorials</a><a href="#projects-showcase-section">Circuit Wiring Guides</a></div></li>
+          <li class="rev-nav-item"><button type="button">Support <svg viewBox="0 0 12 8" aria-hidden="true"><path d="m1 1 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button><div class="rev-dropdown"><a href="help.html">Help Center &amp; FAQs</a><a href="index.html#booking-section">Book Class on WhatsApp</a><a href="shop.html">Stock Updates</a><a href="index.html#booking-section">School Purchase Orders</a><a href="index.html#booking-section">Contact Us</a></div></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true"></div>
+    <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile navigation" aria-hidden="true" inert>
+      <div class="drawer-heading">
+        <button id="close-mobile-drawer" class="drawer-close" type="button" aria-label="Close navigation menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        <a class="rev-brand-logo" href="index.html" aria-label="Get Robotics home"><img src="images/logo-transparent.png" alt="Get Robotics"></a>
+        <div class="drawer-heading-actions">
+          <a class="mobile-icon-link" href="tel:+2349030221179" aria-label="Call Get Robotics"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5 9.5 3l2 4.7-2 1.6a15 15 0 0 0 5.2 5.2l1.6-2 4.7 2-.5 2.9a3 3 0 0 1-3.2 2.5A15.8 15.8 0 0 1 4.1 6.7a3 3 0 0 1 2.5-3.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="mobile-icon-link" href="cart.html" aria-label="Open cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div class="mobile-drawer-content">
+        <form class="mobile-drawer-search" role="search">
+          <label class="visually-hidden" for="mobile-search-input">Search products</label>
+          <input id="mobile-search-input" type="search" placeholder="Search Product Name / Type or Brand">
+          <button type="submit" aria-label="Search products"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+        </form>
+        <a class="mobile-help-link" href="help.html">NEED HELP? (FAQs &amp; Live Chat) <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="mobile-accordions">
+          <details><summary>GET ACADEMY <span aria-hidden="true">+</span></summary><div><a href="index.html#updates-flyers-section">Saturday In-Person Robotics Classes</a><a href="online-classes.html">Online Live Robotics &amp; Coding Classes (NEW)</a><a href="index.html#updates-flyers-section">Holiday STEM Bootcamps</a><a href="index.html#school-partnership-section">School Robotics Lab Partnerships</a><a href="index.html#about-instructor-section">Meet the Lead Instructor</a></div></details>
+          <a class="mobile-direct-online-link" href="online-classes.html" aria-current="page">Online Classes</a>
+          <details><summary>ROBOTICS KITS <span aria-hidden="true">+</span></summary><div><a href="shop.html">Arduino Uno Starter Kits</a><a href="shop.html">ESP32 &amp; Wi-Fi Smart Cars</a><a href="shop.html">Acebott Bionic Spider Kits</a><a href="shop.html">Sensors, Motors &amp; Breadboards</a></div></details>
+          <details><summary>Competition <span aria-hidden="true">+</span></summary><div><a href="#booking-section">FIRST Global &amp; FTC Prep</a><a href="#booking-section">VEXcode VR Challenges</a><a href="#booking-section">Nigerian Youth STEM Competitions</a></div></details>
+          <details><summary>Education <span aria-hidden="true">+</span></summary><div><a href="#booking-section">Primary &amp; Secondary Curriculum</a><a href="#booking-section">School Robotics Lab Setup</a><a href="#projects-showcase-section">6 DIY Student Projects</a></div></details>
+          <details><summary>Shop Categories <span aria-hidden="true">+</span></summary><div><a href="shop.html">Shop All Hardware</a><a href="shop.html">Student Starter Bundles</a><a href="shop.html">Discounted School Packs</a></div></details>
+          <details><summary>Tech Resources <span aria-hidden="true">+</span></summary><div><a href="https://get-robotics.gzoquery.com.ng" target="_blank" rel="noopener noreferrer">Student Code Hub (Arduino &amp; ESP32) <svg class="external-link-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M9 2h5v5M14 2 7 9M12 9v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://get-robotics.gzoquery.com.ng" target="_blank" rel="noopener noreferrer">Master Code Docs Download <svg class="external-link-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M9 2h5v5M14 2 7 9M12 9v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="#live-videos-section">Classroom Video Tutorials</a><a href="#projects-showcase-section">Circuit Wiring Guides</a></div></details>
+          <details><summary>Support <span aria-hidden="true">+</span></summary><div><a href="#booking-section">Book Class on WhatsApp</a><a href="shop.html">Stock Updates</a><a href="#booking-section">School Purchase Orders</a><a href="#booking-section">Contact Us</a></div></details>
+        </div>
+        <div class="mobile-drawer-quick-links"><a href="index.html">Home</a><a href="shop.html">Robotics Store</a><a href="cart.html">Cart</a><a href="login.html">Account</a><a href="login.html#register">Register</a><a href="https://get-robotics.gzoquery.com.ng" target="_blank" rel="noopener noreferrer">Student Code Hub</a><a href="tel:+2349030221179">Call Get Robotics</a><a class="admin-access-link" href="admin.html" hidden>Admin Dashboard</a><a class="btn-school-partner" href="index.html#booking-section" data-school-partner-cta><span class="school-partner-dot" aria-hidden="true"></span>School Partnerships</a></div>
+      </div>
+    </nav>
+
+    <main id="main-content" class="online-academy-main">
+      <section class="online-academy-hero" aria-labelledby="online-academy-title">
+        <div class="online-academy-hero-copy"><span class="online-academy-badge"><span aria-hidden="true"></span>LIVE INSTRUCTOR-LED • VIRTUAL SIMULATORS + HOME HARDWARE KITS</span><p class="section-kicker section-kicker-light">BUILD • CODE • INNOVATE FROM ANYWHERE</p><h1 id="online-academy-title">Get Robotics Online Academy</h1><p>Live online robotics, coding and hardware engineering classes for students across Nigeria and beyond. Learn through interactive simulators or build with a kit delivered to your home.</p><div class="online-academy-hero-actions"><a class="button online-primary-button" href="#online-class-registration-form">Register for Online Class</a><a class="button online-secondary-button" href="shop.html">Buy Home Practice Kit</a></div></div>
+        <div class="online-academy-hero-visual" aria-hidden="true"><svg viewBox="0 0 280 250"><path d="M64 195V82h152v113M42 195h196M99 82V48h82v34M130 48V27h20v21M102 116h76M102 145h76M102 174h76" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="140" cy="131" r="14" fill="none" stroke="currentColor" stroke-width="5"/><path d="m130 131 7 7 14-16" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </section>
+
+      <section class="online-steps-section" aria-labelledby="online-steps-title">
+        <div class="online-page-heading"><span class="section-kicker">A CLEAR PATH FROM FIRST CIRCUIT TO FINISHED BUILD</span><h2 id="online-steps-title">How Our Online Classes Work</h2><p>Learn live with an instructor, practice at your pace, and grow a portfolio of real engineering projects.</p></div>
+        <ol class="online-steps-grid">
+          <li><span class="online-step-index">01</span><h3>Pick Your Track &amp; Age Group</h3><p>Choose a level that fits your learner: Beginner Ages 7–10, Intermediate Ages 11–14, or Advanced Ages 15–18.</p></li>
+          <li><span class="online-step-index">02</span><h3>Connect Your Laptop/Tablet</h3><p>Join interactive sessions on Zoom or Google Meet with live instruction, screen sharing and guided practice.</p></li>
+          <li><span class="online-step-index">03</span><h3>Simulate or Wire Real Hardware</h3><p>Build in Tinkercad or VEXcode VR, or wire your physical Arduino and ESP32 kit at home.</p></li>
+          <li><span class="online-step-index">04</span><h3>Earn Your Get Robotics STEM Certificate &amp; Build a Portfolio</h3><p>Complete practical projects and document your progress in a portfolio of engineering work.</p></li>
+        </ol>
+      </section>
+
+      <section class="online-schedule-section" aria-labelledby="online-schedule-title">
+        <div class="online-page-heading"><span class="section-kicker">CHOOSE YOUR ONLINE COHORT</span><h2 id="online-schedule-title">Weekly Online Class Schedule</h2><p>Request a place and our team will confirm the next cohort, current pricing and session availability.</p></div>
+        <div class="online-schedule-grid">
+          <article class="online-schedule-card"><span class="online-schedule-label">WEEKDAY COHORT</span><h3>Weekday After-School Online Lab</h3><p class="online-schedule-time">4:00 PM – 5:30 PM WAT</p><p>Live simulator and coding practice in an instructor-led weekday lab.</p><a class="online-schedule-cta" href="#online-class-registration-form" data-online-cohort="weekday-online-lab">Register for This Cohort</a></article>
+          <article class="online-schedule-card online-schedule-featured"><span class="online-schedule-label">WEEKLY COHORT</span><h3>Saturday Online Robotics Cohort</h3><p class="online-schedule-time">10:00 AM / 2:00 PM WAT</p><p>Choose a Saturday session for guided robotics builds, code and engineering challenges.</p><a class="online-schedule-cta" href="#online-class-registration-form" data-online-cohort="saturday-online-cohort">Register for This Cohort</a></article>
+          <article class="online-schedule-card"><span class="online-schedule-label">PERSONALIZED COACHING</span><h3>1-on-1 Private Online Robotics &amp; Coding Mentorship</h3><p class="online-schedule-time">Flexible session times</p><p>Personalized online instruction matched to the learner's goals, pace and projects.</p><a class="online-schedule-cta" href="#online-class-registration-form" data-online-cohort="private-online-mentorship">Register for This Cohort</a></article>
+        </div>
+      </section>
+
+      <section class="online-registration-section" aria-labelledby="online-registration-title">
+        <div class="online-registration-intro"><span class="section-kicker section-kicker-light">TAKE THE NEXT STEP</span><h2 id="online-registration-title">Online Class Registration</h2><p>Share your details and preferred cohort. Your registration request will be saved securely before WhatsApp opens with your enrollment information.</p><ul><li>Instructor-led online learning</li><li>Virtual simulator or home hardware track</li><li>Confirmation of current availability and pricing</li></ul></div>
+        <form id="online-class-registration-form" class="online-registration-form">
+          <div class="online-form-heading"><h3>Register your interest</h3><p>Fields marked required must be completed.</p></div>
+          <label for="online-student-name">Full Name</label><input id="online-student-name" name="name" autocomplete="name" required>
+          <label for="online-student-email">Email Address</label><input id="online-student-email" name="email" type="email" autocomplete="email" required>
+          <label for="online-student-phone">Phone / WhatsApp Number</label><input id="online-student-phone" name="phone" type="tel" autocomplete="tel" required>
+          <label for="online-student-age">Student Age / Class Level</label><input id="online-student-age" name="studentAge" placeholder="For example, age 12 or JSS 2">
+          <label for="online-cohort-choice">Preferred Class or Cohort</label><select id="online-cohort-choice" name="program" required><option value="">Select an online class</option><option value="weekday-online-lab">Weekday After-School Online Lab (4:00 PM – 5:30 PM WAT)</option><option value="saturday-online-cohort">Saturday Online Robotics Cohort (10:00 AM / 2:00 PM WAT)</option><option value="private-online-mentorship">1-on-1 Private Online Robotics &amp; Coding Mentorship</option><option value="Live Virtual Simulator Lab">Live Virtual Simulator Lab</option><option value="Kit-to-Your-Doorstep + Live Coaching">Kit-to-Your-Doorstep + Live Coaching</option><option value="Self-Paced Video Modules &amp; Student Code Hub">Self-Paced Video Modules &amp; Student Code Hub</option></select>
+          <label for="online-student-message">Learning Goals, Hardware or Questions</label><textarea id="online-student-message" name="message" rows="4" placeholder="Tell us what the student would like to build or learn."></textarea>
+          <button class="button online-form-submit" type="submit">Submit Registration &amp; Connect on WhatsApp</button>
+          <p id="online-registration-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="rev-white-footer online-academy-footer">
+      <div class="rev-footer-grid"><section class="rev-footer-column"><h2>Get Robotics</h2><a href="index.html">Home</a><a href="online-classes.html">Online Classes</a><a href="shop.html">Shop Robotics Hardware</a><a href="help.html">Help Center &amp; FAQs</a></section><section class="rev-footer-column"><h2>Online Learning</h2><a href="#online-steps-title">How Online Classes Work</a><a href="#online-schedule-title">Weekly Cohorts</a><a href="#online-class-registration-form">Register for Online Class</a><a href="https://get-robotics.gzoquery.com.ng" target="_blank" rel="noopener noreferrer">Student Code Hub</a></section><section class="rev-footer-column"><h2>Follow Us</h2><div class="rev-footer-socials"><a href="https://www.tiktok.com/@getrobotics?_r=1&amp;_t=ZS-9BKD57KGDHM" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 8.3a7.1 7.1 0 0 1-4.4-1.6v7.1a5.8 5.8 0 1 1-5-5.7v3.7a2.2 2.2 0 1 0 1.5 2.1V2.5h3.5c.2 2.4 1.7 4.2 4.4 4.5v3.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><a href="https://youtube.com/@getrobotics?si=hxkOtylsKbNI1wXF" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 7.5a2.8 2.8 0 0 0-2-2C17.2 5 12 5 12 5s-5.2 0-7 .5a2.8 2.8 0 0 0-2 2A27 27 0 0 0 2.5 12a27 27 0 0 0 .5 4.5 2.8 2.8 0 0 0 2 2c1.8.5 7 .5 7 .5s5.2 0 7-.5a2.8 2.8 0 0 0 2-2 27 27 0 0 0-.5-9ZM10 15.5v-7l6 3.5-6 3.5Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><a href="https://www.facebook.com/share/1KRdG9jwhc/?mibextid=wwXIfr" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.8l.4-3h-3.2V8c0-.9.3-1.5 1.6-1.5H17V3.2c-.3 0-1.2-.2-2.4-.2-2.5 0-4.1 1.5-4.1 4.2V10H7.7v3h2.8v8h3Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div></section><section class="rev-footer-column"><h2>Customer &amp; Student Support</h2><a href="help.html">Help Center &amp; Live AI Chat</a><a href="online-classes.html">Online Classes</a></section></div>
+      <div class="rev-footer-bottom"><span>© 2026 Get Robotics (Build • Code • Innovate). All rights reserved.</span><a href="#main-header" class="footer-top-link">Back to top <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 12 6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    </footer>
+    <button id="get-support-launcher" type="button" aria-controls="get-support-widget" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9.7 9a2.4 2.4 0 1 1 4.1 1.7c-1.1 1.1-1.8 1.3-1.8 3m0 3h.01" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span class="support-launcher-desktop-label">Help &amp; Live Chat</span><span class="support-launcher-mobile-label">Contact Us</span></button>
+    <section id="get-support-widget" role="dialog" aria-modal="false" aria-labelledby="support-title" hidden><header class="support-widget-header"><img src="images/logo-badge-3d.jpg" alt="Get Robotics"><div><h2 id="support-title">Get Robotics Support</h2><p>Instant Answers • Classes, Kits &amp; Code Hub</p></div><button id="close-support-widget" type="button" aria-label="Close support"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header><div class="support-faq-list" aria-label="Frequently asked questions"><button type="button" data-faq-question="How do online robotics classes work?">How do online robotics classes work?</button><button type="button" data-faq-question="How do I register for an online cohort?">How do I register for an online cohort?</button><button type="button" data-faq-question="What robotics hardware can I use at home?">What robotics hardware can I use at home?</button></div><div id="support-chat-messages" class="support-chat-messages" role="log" aria-live="polite"><p class="support-message support-message-assistant">Hello. Ask about online cohorts, virtual simulators, home kits, or student code resources.</p></div><form id="support-chat-form" class="support-chat-form"><label class="visually-hidden" for="support-chat-input">Ask Get Robotics Support</label><input id="support-chat-input" name="question" type="text" placeholder="Ask about online classes or home kits..." autocomplete="off" required><button id="support-chat-send" type="submit" aria-label="Send question"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></form><footer class="support-escalation-bar"><a id="support-whatsapp-link" href="https://wa.me/2347033952315" target="_blank" rel="noopener noreferrer">Chat With Us on WhatsApp</a></footer></section>
+    <nav id="mobile-bottom-nav" class="mobile-bottom-nav" aria-label="Mobile quick navigation"><a class="mobile-bottom-nav-link" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1V10Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span>Home</span></a><a class="mobile-bottom-nav-link" href="shop.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 4v5m8-5v5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Store</span></a><a class="mobile-bottom-nav-link" href="https://get-robotics.gzoquery.com.ng" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-2-13-4 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Code Hub</span></a><a class="mobile-bottom-nav-link" href="cart.html" aria-label="Open cart"><span class="mobile-bottom-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="mobile-bottom-cart-badge" hidden>0</span></span><span>Cart</span></a><a class="mobile-bottom-nav-link" href="login.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Account</span></a></nav>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
