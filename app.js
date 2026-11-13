@@ -426,7 +426,37 @@ let activeStoreCategory = "all";
 let activeStoreSort = "featured";
 const productQuantities = new Map();
 let activeAuthUser = null;
-let whatsappPhone = String(window.GET_ROBOTICS_WHATSAPP_NUMBER || "2347033952315").replace(/\D/g, "");
+const OFFICIAL_WHATSAPP_NUMBER = "2347033952315";
+
+function normalizePhoneNumberForWhatsApp(value) {
+  const digits = String(value || "").replace(/\D/g, "");
+  if (!digits) return "";
+  if (digits.startsWith("0")) return `234${digits.slice(1)}`;
+  if (digits.startsWith("234")) return digits;
+  return digits.length === 10 ? `234${digits}` : digits;
+}
+
+function normalizeWhatsAppNumber(value) {
+  const digits = normalizePhoneNumberForWhatsApp(value);
+  const legacyNumber = ["9030", "221179"].join("");
+  const placeholderNumber = ["8000", "000000"].join("");
+  if (
+    !digits
+    || digits.includes(legacyNumber)
+    || digits.includes(placeholderNumber)
+    || digits !== OFFICIAL_WHATSAPP_NUMBER
+  ) {
+    return OFFICIAL_WHATSAPP_NUMBER;
+  }
+  return digits;
+}
+
+function sanitizeSiteSettings(settings) {
+  const source = settings && typeof settings === "object" && !Array.isArray(settings) ? settings : {};
+  return { ...source, whatsappNumber: normalizeWhatsAppNumber(source.whatsappNumber) };
+}
+
+let whatsappPhone = normalizeWhatsAppNumber(window.GET_ROBOTICS_WHATSAPP_NUMBER);
 const officialSocialUrls = {
   tiktokUrl: "https://www.tiktok.com/@getrobotics?_r=1&_t=ZS-9BKD57KGDHM",
   youtubeUrl: "https://youtube.com/@getrobotics?si=hxkOtylsKbNI1wXF",
@@ -435,13 +465,13 @@ const officialSocialUrls = {
 let officialSelarStoreUrl = "https://selar.com";
 
 function buildWhatsAppLink(message) {
-  const recipient = whatsappPhone ? `/${whatsappPhone}` : "/";
-  return `https://wa.me${recipient}?text=${encodeURIComponent(message)}`;
+  const baseUrl = `https://wa.me/${whatsappPhone}`;
+  return message ? `${baseUrl}?text=${encodeURIComponent(message)}` : baseUrl;
 }
 
 document.querySelectorAll('a[href^="https://wa.me/"]').forEach((link) => {
   const message = new URL(link.href).searchParams.get("text");
-  if (message) link.href = buildWhatsAppLink(message);
+  link.href = buildWhatsAppLink(message || "");
 });
 
 function formatNaira(amount) {
@@ -1670,9 +1700,9 @@ async function completeSecureCheckout(method) {
 
     if (method === "whatsapp") {
       if (whatsappWindow) {
-        whatsappWindow.location.href = `https://wa.me/2349030221179?text=${encodeURIComponent(receipt)}`;
+        whatsappWindow.location.href = buildWhatsAppLink(receipt);
       } else {
-        window.location.href = `https://wa.me/2349030221179?text=${encodeURIComponent(receipt)}`;
+        window.location.href = buildWhatsAppLink(receipt);
       }
       if (secureCheckoutStatus) secureCheckoutStatus.textContent = `Order ${orderId} saved. Complete your order in WhatsApp.`;
       return;
@@ -1681,9 +1711,9 @@ async function completeSecureCheckout(method) {
     if (lines.length > 1) {
       const verifiedInvoice = `${receipt}\nPlease match payment to order ${orderId}.`;
       if (whatsappWindow) {
-        whatsappWindow.location.href = `https://wa.me/2349030221179?text=${encodeURIComponent(verifiedInvoice)}`;
+        whatsappWindow.location.href = buildWhatsAppLink(verifiedInvoice);
       } else {
-        window.open(`https://wa.me/2349030221179?text=${encodeURIComponent(verifiedInvoice)}`, "_blank", "noopener,noreferrer");
+        window.open(buildWhatsAppLink(verifiedInvoice), "_blank", "noopener,noreferrer");
       }
     } else {
       whatsappWindow?.close();
@@ -2458,18 +2488,17 @@ function renderHeroUpdates() {
 function updateWhatsAppLinks() {
   document.querySelectorAll('a[href^="https://wa.me/"]').forEach((link) => {
     const message = new URL(link.href).searchParams.get("text");
-    if (message) link.href = buildWhatsAppLink(message);
+    link.href = buildWhatsAppLink(message || "");
   });
 }
 
 function applyLiveSettings(settings) {
-  if (typeof settings.whatsappNumber === "string") {
-    whatsappPhone = settings.whatsappNumber.replace(/\D/g, "");
-    updateWhatsAppLinks();
-    document.querySelectorAll('.rev-footer-contact[href*="booking-section"]').forEach((link) => {
-      if (whatsappPhone) link.href = `https://wa.me/${whatsappPhone}`;
-    });
-  }
+  settings = sanitizeSiteSettings(settings);
+  whatsappPhone = settings.whatsappNumber;
+  updateWhatsAppLinks();
+  document.querySelectorAll('.rev-footer-contact[href*="booking-section"]').forEach((link) => {
+    link.href = `https://wa.me/${whatsappPhone}`;
+  });
   if (typeof settings.contactEmail === "string" && settings.contactEmail) {
     document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
       link.href = `mailto:${settings.contactEmail}`;
@@ -2653,8 +2682,7 @@ function renderAdminInquiries(snapshot) {
     const messageCell = document.createElement("td");
     messageCell.textContent = data.message || "";
     const actionCell = document.createElement("td");
-    const digits = String(data.phone || "").replace(/\D/g, "");
-    const phone = digits.startsWith("0") ? `234${digits.slice(1)}` : digits;
+    const phone = normalizePhoneNumberForWhatsApp(data.phone);
     const reply = document.createElement("a");
     reply.className = "admin-action-link";
     reply.textContent = phone ? "Reply on WhatsApp" : "No phone provided";
@@ -2714,7 +2742,8 @@ async function connectAdminWorkspace() {
   const cachedInquiries = readAdminCache("inquiries", []);
   if (Array.isArray(cachedInquiries)) renderAdminInquiries(cachedInquiries);
   const cachedShowcase = readAdminCache("showcase", {});
-  const cachedSettings = readAdminCache("settings:main", {});
+  const cachedSettings = sanitizeSiteSettings(readAdminCache("settings:main", {}));
+  writeAdminCache("settings:main", cachedSettings);
   const cachedAdmins = readAdminCache("admins", []);
   currentSiteSettings = cachedSettings;
   adminEmails = Array.isArray(cachedAdmins) ? cachedAdmins : [];
@@ -2769,9 +2798,10 @@ async function connectAdminWorkspace() {
     setAdminStatus(`Showcase settings failed to load: ${error.message}`, true);
   });
   const settingsUnsubscribe = onSnapshot(doc(db, "getrobotics_settings", "main"), (snapshot) => {
-    const data = snapshot.exists() ? snapshot.data() : cachedSettings;
+    const data = sanitizeSiteSettings(snapshot.exists() ? snapshot.data() : cachedSettings);
     writeAdminCache("settings:main", data);
     currentSiteSettings = data;
+    applyLiveSettings(data);
     if (adminSettingsForm && !adminSettingsForm.matches(":focus-within")) {
       ["whatsappNumber", "contactEmail", "physicalAddress", "tiktokUrl", "youtubeUrl", "facebookUrl", "instructorPortrait", "selarStoreUrl"].forEach((field) => {
         if (adminSettingsForm.elements[field]) {
@@ -3399,7 +3429,7 @@ document.querySelector("#admin-settings-form")?.addEventListener("submit", async
       throw new Error("Enter a secure instructor portrait URL.");
     }
     const settingsData = {
-      whatsappNumber: String(values.whatsappNumber || "").replace(/\D/g, ""),
+      whatsappNumber: normalizeWhatsAppNumber(values.whatsappNumber),
       contactEmail: String(values.contactEmail || "").trim(),
       physicalAddress: String(values.physicalAddress || "").trim(),
       tiktokUrl: String(values.tiktokUrl || officialSocialUrls.tiktokUrl).trim(),
@@ -3618,7 +3648,11 @@ function connectFirestore() {
       console.error("Unable to load cloud flyers; showing the official local flyers.", error);
     });
     onSnapshot(doc(db, "getrobotics_settings", "main"), (snapshot) => {
-      if (snapshot.exists()) applyLiveSettings(snapshot.data());
+      if (snapshot.exists()) {
+        const settings = sanitizeSiteSettings(snapshot.data());
+        writeAdminCache("settings:main", settings);
+        applyLiveSettings(settings);
+      }
     }, (error) => {
       console.error("Unable to load live Get Robotics settings.", error);
     });
@@ -3898,7 +3932,7 @@ window.matchMedia("(max-width: 768px)").addEventListener?.("change", updateSuppo
 supportLauncher?.addEventListener("click", () => {
   if (window.innerWidth <= 768) {
     const message = "Hello Get Robotics! I am visiting your website and have a question about your classes/robotics kits.";
-    window.open(`https://wa.me/2349030221179?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    window.open(buildWhatsAppLink(message), "_blank", "noopener,noreferrer");
     return;
   }
   toggleSupportWidget();
